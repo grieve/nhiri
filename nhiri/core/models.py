@@ -22,6 +22,7 @@ class Moment(models.Model):
 
 
 class TwitterMoment(Moment):
+    tweet_id = models.CharField(max_length=64)
     author = models.CharField(max_length=32)
     content = models.CharField(max_length=200)
     retweet = models.BooleanField(default=False)
