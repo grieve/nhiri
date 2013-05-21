@@ -171,7 +171,7 @@ LOGGING = {
 
 SOURCE_CONF = {
     "twitter": {
-        "key": os.environ['TWITTER_CONSUMER_KEYAPI_KEYS'],
+        "key": os.environ['TWITTER_CONSUMER_KEY'],
         "secret": os.environ['TWITTER_CONSUMER_SECRET']
     },
     "gps": {
