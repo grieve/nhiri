@@ -1,1 +1,1 @@
-web: gunicorn ace.wsgi
+web: gunicorn nhiri.wsgi
