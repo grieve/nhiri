@@ -155,3 +155,10 @@ LOGGING = {
         },
     }
 }
+
+API_KEYS = {
+    "twitter": {
+        "key": "",
+        "secret": ""
+    }
+}
