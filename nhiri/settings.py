@@ -1,3 +1,5 @@
+import os
+
 # Django settings for nhiri project.
 
 DEBUG = True
@@ -169,7 +171,7 @@ LOGGING = {
 
 API_KEYS = {
     "twitter": {
-        "key": "",
-        "secret": ""
+        "key": os.environ['TWITTER_CONSUMER_KEY'],
+        "secret": os.environ['TWITTER_CONSUMER_SECRET']
     }
 }
