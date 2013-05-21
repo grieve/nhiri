@@ -23,10 +23,10 @@ DATABASES = {
     },
     'herokupg': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd5imuqmghrk90k',
-        'USER': 'qjowhexxwqmntg',
-        'PASSWORD': 'J7kHJIhiNahWzr4YHlbo2v4nCh',
-        'HOST': 'ec2-54-227-255-156.compute-1.amazonaws.com',
+        'NAME': os.environ['PG_DB_NAME'],
+        'USER': os.environ['PG_DB_USER'],
+        'PASSWORD': os.environ['PG_DB_PASSWORD'],
+        'HOST': os.environ['PG_DB_HOST'],
         'POST': 5432
     }
 }
@@ -91,7 +91,6 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -101,7 +100,6 @@ SECRET_KEY = 'i+dw9*co#n6l^xie&6p$87&k1h^(m@=@boqg%(3_327xyx_fjo'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -133,7 +131,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'south',
-    'nhiri.core'
+    'nhiri.core',
+    'rest_framework'
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
