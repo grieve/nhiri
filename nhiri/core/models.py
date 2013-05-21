@@ -2,29 +2,17 @@ from django.db import models
 
 
 class Account(models.Model):
-    class Meta:
-        name = "Default"
-        source = "Default"
-        datatype = "text"
-        mapping = {}
-
-    created = models.DateTimeField()
-    refreshed = models.DateTimeField()
+    created = models.DateTimeField(auto_now_add=True)
+    refreshed = models.DateTimeField(auto_now=True)
 
 
 class TwitterAccount(Account):
-    class Meta:
-        name = "Twitter"
-        source = "http://twitter.com"
-        datatype = "json"
-        mapping = {
-
-        }
-
     username = models.CharField(max_length=32)
     followers = models.PositiveIntegerField(default=0)
     following = models.PositiveIntegerField(default=0)
     tweet_count = models.PositiveIntegerField(default=0)
+    access_token_key = models.TextField(default="")
+    access_token_secret = models.TextField(default="")
 
 
 class Moment(models.Model):
