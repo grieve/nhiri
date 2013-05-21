@@ -18,7 +18,7 @@ class TwitterAccount(Account):
 class Moment(models.Model):
     when = models.DateTimeField()
     kind = models.CharField(max_length=10, default="text")
-    account = models.ForeignKey(Account)
+    account = models.ForeignKey(Account, null=True, editable=False)
 
 
 class TwitterMoment(Moment):
@@ -27,3 +27,8 @@ class TwitterMoment(Moment):
     content = models.CharField(max_length=200)
     retweet = models.BooleanField(default=False)
     original_author = models.CharField(max_length=32, null=True)
+
+
+class GPSMoment(Moment):
+    latitude = models.FloatField()
+    longitude = models.FloatField()
