@@ -169,9 +169,14 @@ LOGGING = {
     }
 }
 
-API_KEYS = {
+SOURCE_CONF = {
     "twitter": {
-        "key": os.environ['TWITTER_CONSUMER_KEY'],
+        "key": os.environ['TWITTER_CONSUMER_KEYAPI_KEYS'],
         "secret": os.environ['TWITTER_CONSUMER_SECRET']
+    },
+    "gps": {
+        "source": os.environ['GPS_COORDS_SOURCE'],
+        "username": os.environ['GPS_COORDS_USERNAME'],
+        "password": os.environ['GPS_COORDS_PASSWORD']
     }
 }

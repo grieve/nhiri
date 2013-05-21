@@ -12,8 +12,8 @@ class AuthView(View):
 
     def get(self, request):
         auth = tweepy.OAuthHandler(
-            settings.API_KEYS['twitter']['key'],
-            settings.API_KEYS['twitter']['secret'],
+            settings.SOURCE_CONF['twitter']['key'],
+            settings.SOURCE_CONF['twitter']['secret'],
             "http://%s%s" % (request.get_host(), request.get_full_path())
         )
         if 'oauth_token' in request.GET and 'oauth_verifier' in request.GET:
@@ -48,8 +48,8 @@ class FetchView(View):
 
     def get(self, request):
         auth = tweepy.OAuthHandler(
-            settings.API_KEYS['twitter']['key'],
-            settings.API_KEYS['twitter']['secret'],
+            settings.SOURCE_CONF['twitter']['key'],
+            settings.SOURCE_CONF['twitter']['secret'],
             "http://%s%s" % (request.get_host(), request.get_full_path())
         )
         for account in models.TwitterAccount.objects.all():
