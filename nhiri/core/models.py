@@ -32,3 +32,8 @@ class TwitterMoment(Moment):
 class GPSMoment(Moment):
     latitude = models.FloatField()
     longitude = models.FloatField()
+
+
+class CaffeineMoment(Moment):
+    item = models.CharField(max_length=255)
+    milligrams = models.PositiveIntegerField(default=0)
