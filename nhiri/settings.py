@@ -10,7 +10,7 @@ ADMINS = (
 MANAGERS = ADMINS
 
 DATABASES = {
-    'default': {
+    'development': {
         'ENGINE': 'django.db.backends.sqlite3',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'NAME': '.datastore',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
@@ -18,8 +18,18 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
+    },
+    'herokupg': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd5imuqmghrk90k',
+        'USER': 'qjowhexxwqmntg',
+        'PASSWORD': 'J7kHJIhiNahWzr4YHlbo2v4nCh',
+        'HOST': 'ec2-54-227-255-156.compute-1.amazonaws.com',
+        'POST': 5432
     }
 }
+
+DATABASES['default'] = DATABASES['herokupg']
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
