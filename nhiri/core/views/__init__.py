@@ -21,6 +21,7 @@ class GPSLoggerFetchView(View):
         rows = coords.text.split('\n')
         new_moments = []
         for row in rows:
+            logging.error(row)
             values = row.split(',')
             if values[0] == "time" or values[0].startswith('1977'):
                 continue
@@ -33,4 +34,4 @@ class GPSLoggerFetchView(View):
             if new:
                 new_moments.append(values[0])
 
-            return HttpResponse("%d new moments: %s" % (len(new_moments), new_moments))
+        return HttpResponse("%d new moments: %s" % (len(new_moments), new_moments))

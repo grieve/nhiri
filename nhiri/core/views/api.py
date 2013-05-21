@@ -15,4 +15,3 @@ class CaffeineMomentList(generics.ListCreateAPIView):
     model = models.CaffeineMoment
     serializers = serializers.CaffeineMomentSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
-`
