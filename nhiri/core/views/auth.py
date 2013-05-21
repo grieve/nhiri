@@ -34,7 +34,7 @@ class TwitterAuthView(View):
             account.tweet_count = user.statuses_count
             account.save()
             if 'redirect_after_auth' in request.session:
-                return redirect(request.session['redirect_after_auth'])
+                return redirect(request.session.pop('redirect_after_auth'))
             else:
                 return redirect('/')
         else:
